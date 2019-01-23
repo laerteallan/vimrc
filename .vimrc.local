@@ -1,0 +1,37 @@
+" search files with ctrl p
+nnoremap <c-p> :Files <CR>
+" python
+" vim-python
+augroup vimrc-python
+  autocmd!
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 colorcolumn=120
+      \ formatoptions+=croq softtabstop=4
+      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
+    autocmd FileType python noremap <C-F8> :PymodeLintAuto<CR>
+    autocmd FileType python noremap <C-F9> :PymodeLint<CR>
+
+    autocmd FileType python noremap <C-F7> :Isort<CR>
+
+augroup END
+
+"Config pylint py-mode"
+
+" Active mode lint
+let g:pymode_lint = 1
+
+"check lin save file
+let g:pymode_lint_on_write = 1
+
+
+
+"check code on every save
+let g:pymode_lint_unmodified = 1
+
+" Code Checkers
+let g:pymode_lint_checkers = ['pyflakes', 'pylint', 'pep8', 'mccabe']
+let g:pymode_options_max_line_length = 120
+
+"Ignore erros
+"let g:pymode_lint_ignore = "E501,W"
+
