@@ -1,4 +1,7 @@
 " search files with ctrl p
+Plug 'rking/ag.vim'
+
+nnoremap <Leader>f :Ag<space>
 nnoremap <c-p> :Files <CR>
 " python
 " vim-python
